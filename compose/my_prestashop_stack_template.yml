@@ -1,0 +1,64 @@
+version: "3"
+services:
+  prestashop:
+    image: myprestanet
+    networks:
+      prestashop-net:
+        ipv4_address: 192.168.48.4
+    ports:
+      - 8181:80
+    links:
+      - mariadb:mariadb
+    depends_on:
+      - mariadb
+    volumes:
+      - ./src:/var/www/html
+      - ./src/modules:/var/www/html/modules
+      - ./src/themes:/var/www/html/themes
+      - ./src/override:/var/www/html/override
+    environment:
+      - PS_DEV_MODE=1
+      - DB_SERVER=mariadb
+      - DB_USER=root
+      - DB_PASSWD=mycustompassword
+      - DB_NAME=prestashop
+      - PS_INSTALL_AUTO=0
+
+  mariadb:
+    image: mymarianet
+    networks:
+      prestashop-net:
+        ipv4_address: 192.168.48.2
+    volumes:
+      - presta_db:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=mycustompassword
+      - MYSQL_DATABASE=prestashop
+
+  phpmyadmin:
+    image: myphpmyadminnet
+    networks:
+      prestashop-net:
+        ipv4_address: 192.168.48.3
+    links:
+      - mariadb:mariadb
+    ports:
+      - 1235:80
+    depends_on:
+      - mariadb
+    environment:
+      - PMA_HOST=mariadb
+      - PMA_USER=root
+      - PMA_PASSWORD=mycustompassword
+
+volumes:
+  presta_db:
+
+networks:
+  prestashop-net:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.48.0/20
+          gateway: 192.168.48.1
+    external: false
