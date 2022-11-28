@@ -29,3 +29,11 @@ We achieve this by saving a preconfigured state of prestashop and loading a copy
 ## How to use
 
 In order to deploy the preconfigured prestashop you can deploy a stack from the freshly created stack template. Then you stop the containers and overwrite the contents and volume of the prestashop container with the backup. Restart the containers.
+
+## Useful Links
+
+- **Docker File Ownership:** <https://www.baeldung.com/linux/file-ownership-docker-container>
+
+- **Docker Tag:** <https://www.baeldung.com/ops/docker-tag>
+
+- **Docker assign static IP:** <https://www.baeldung.com/ops/docker-assign-static-ip-container>

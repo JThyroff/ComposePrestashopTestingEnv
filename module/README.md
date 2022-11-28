@@ -24,6 +24,8 @@ For more example modules check out this [repository](https://github.com/PrestaSh
 
 - If a ```ClassNotFoundException``` appears, check the namespaces in your class file and in ```composer.json``` and rerun ```composer install``` in the modules directory to install dependencies and generate the ```autoload.php``` file.
 
+- Run ```[build_zip.sh](helloworld/build_zip.sh)``` to zip the module excluding the ```.git``` and other unnecessary folders. This makes sure you're not surpassing the size limit of the module to quickly.
+
 ## Useful Links
 
 - **Hooklist:** <https://devdocs.prestashop-project.org/1.7/modules/concepts/hooks/list-of-hooks/>
