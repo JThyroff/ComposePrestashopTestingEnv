@@ -23,3 +23,13 @@ For more example modules check out this [repository](https://github.com/PrestaSh
 - In case of ownership and permission errors connect to the commandline of the prestashop container in Portainer and use ```chmod``` and ```chown``` to fix the problem.
 
 - If a ```ClassNotFoundException``` appears, check the namespaces in your class file and in ```composer.json``` and rerun ```composer install``` in the modules directory to install dependencies and generate the ```autoload.php``` file.
+
+## Useful Links
+
+- **Hooklist:** <https://devdocs.prestashop-project.org/1.7/modules/concepts/hooks/list-of-hooks/>
+
+- **Prestashop Developer Docs:** <https://devdocs.prestashop-project.org/>
+
+- **Prestashop UI Kit:** <https://build.prestashop-project.org/prestashop-ui-kit/>
+
+- **Example modules:** <https://github.com/PrestaShop/example-modules>
