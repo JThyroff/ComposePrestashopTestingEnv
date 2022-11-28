@@ -1,6 +1,6 @@
 # Compose Prestashop Testing Environment
 
-This repository provides instructions and sample compose files how to setup a local docker testing environment for prestashop module programming.
+This tutorial provides instructions and sample compose files how to setup a local docker testing environment for prestashop module programming.
 The goal is to keep the startup process as short as possible to enable faster development and testing cycles.
 We achieve this by saving a preconfigured state of prestashop and loading a copy of it on demand.
 
