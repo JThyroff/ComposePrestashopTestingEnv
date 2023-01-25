@@ -59,6 +59,6 @@ networks:
     driver: bridge
     ipam:
       config:
-        - subnet: 192.168.48.0/20
+        - subnet: 192.168.48.0/29
           gateway: 192.168.48.1
     external: false
